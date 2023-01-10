@@ -1,3 +1,5 @@
+Follow these instructions:
+=========================
 cd Session_2
 mkdir build
 cd build
