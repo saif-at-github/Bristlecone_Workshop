@@ -1,0 +1,9 @@
+Target_1:Target_2
+	@echo "Target_1...."
+
+Target_2:Target_3
+	@echo "Target_2...."
+
+Target_3: 
+	@echo "Target_3...."
+	

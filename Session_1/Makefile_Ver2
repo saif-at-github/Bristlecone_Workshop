@@ -1,0 +1,14 @@
+myapp: hello.o main.o
+	gcc hello.o main.o -o $@
+
+hello.o: hello.c hello.h
+	gcc -c hello.c
+
+main.o:	main.c hello.h
+	gcc -c main.c
+
+clean:
+	rm *.o myapp
+
+install:
+	cp ./myapp /usr/local/bin

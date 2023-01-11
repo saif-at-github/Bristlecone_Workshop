@@ -16,4 +16,30 @@ extern void Hello(const char* str);
 
 #define SQR(x)      ((x)*(x))
 
+static int j = 100;
+
+#if 0
+void fun()
+{
+    printf("Testing...\n");
+    return;
+}
+
+static void fun()
+{
+    printf("Testing...\n");
+    return;
+}
+
+
+#endif
+
+
+inline void fun()
+{
+    printf("Testing...\n");
+    return;
+}
+
+
 #endif

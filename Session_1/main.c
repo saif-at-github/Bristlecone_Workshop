@@ -7,13 +7,18 @@
 
 #include "hello.h"
 
+extern int i;
+
 int32_t main(int32_t argc, char* argv[])
 {
     #ifdef CARG
     int32_t num = 0;
     #endif
 
-    Hello("Bristlecone");
+    i = 123;
+    Hello("Bristlecone %d\n");
+    printf("main: i = %d\n", i);
+    printf("main: j = %d\n", j);
     
     #ifdef PR_MACRO
     printf("MUL(2+3,4+5) = %d\n", MUL(2+3,4+5));

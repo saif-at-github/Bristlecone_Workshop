@@ -1,11 +1,15 @@
 # I am a comment, and I want to say that the variable CC will be
 # the compiler to use.
+
+#CC=arm-linux-gnueabihf-gcc
 CC=gcc
+
+#CC?=gcc
+#CC:=gcc
 
 # Hwy!, I am comment no.2. I want to say that CFLAGS will be the
 #options I'll pass to the compiler
 CFLAGS=-c -Wall -DPR_MACRO -DCARG
-
 
 all:hello
 
@@ -22,10 +26,10 @@ clean:
 	rm -rf *.o hello *.i *.s
 
 preprocess_main:
-	gcc -E main.c -o main.i
+	gcc -E $(CFLAGS)  main.c -o main.i
 
 preprocess_hello:
-	gcc -E hello.c -o hello.i
+	gcc -E $(CFLAGS)  hello.c -o hello.i
 
 compile_main:
 	gcc -S main.c
