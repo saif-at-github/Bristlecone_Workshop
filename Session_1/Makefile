@@ -43,4 +43,6 @@ assemble_main:
 assemble_hello:
 	gcc -c hello.c
 
+rebuild:
+	touch *.c; make all;
 

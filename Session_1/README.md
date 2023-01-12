@@ -71,3 +71,33 @@ exe-1        exe-2       exe-3      2KB
 ========================================
             glibc  (.so)            4KB
 ==========================================
+
+
+=========================================================
+clean.c
+
+make
+..
+..
+make
+up to date.
+
+make clean
+up to date.
+
+
+Build a project:
+==================
+make
+
+Rebuild the project:
+====================
+make clean
+make
+
+
+Make
+CMake --make
+Bazel
+colcon -- make
+Yocto...poky -- make
