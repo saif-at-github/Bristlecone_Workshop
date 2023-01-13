@@ -1,0 +1,63 @@
+gcov: opensource tool for code coverage
+
+code cov describes "how much testing is been performed on our source code" - White-box testing
+
+Automotive ADAS
+Aerospace
+Nuclear plants
+RT Application
+Submarines
+Medical
+
+ISO26262 - Functional Safety (FuSa)
+ - Architectural analysis - artificats. ----- STABLE, COHESION, MODULAR, COUPLE  --- [LATTIX, Codesonar]
+ - SCA - CFA - Control Flow Analysis  [Parasoft, LDRA, Axivion, VectorCAST, Codesonar]
+ - SCA - DFA - Data Flow Analysis [Parasoft, LDRA, Axivion, VectorCAST, Codesonar]
+ - UML diagrams - [EA, IBM Rationalrose...]
+ - Code coverage - [VectorCAST, LDRA, Parasoft]
+ - Unit testing - [VectorCAST, LDRA, Parasoft]
+ - Integration - [VectorCAST, LDRA, Parasoft]
+ - Documentastion - [Doxygen]
+ - Requirement traceability - [DOORS, JAMA, CodeBeamer]
+
+- ASPICE
+
+Coding Standards:
+-----------------
+- MISRA C/C++
+- AUTOSAR C++
+
+Cybersecurity - Security Compilance
+=====================================
+...
+...
+
+
+meeting the requirement:
+========================
+
+WAP which add two numbers.
+
+int
+float 
+double
+
+int addNum(int a, int b)
+{
+    return (a+b);
+}
+
+
+int main()
+{
+    addNum(3,4);
+}
+
+
+Code Coverage:
+===============
+1. Statement Coverage / Line Coverage: = (num of executed statements / total number of staements) x 100
+
+instruction to run:
+====================
+make clean; make build; ./main; make coverage ; make gcovr-report; make lcov-report 
