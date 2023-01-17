@@ -1,0 +1,152 @@
+code coverage..
+
+profiling:
+    - time consumed for execution:
+    - gprof ... flat profiling, call graph.
+
+unit testing:
+ - cunit
+ - gtest
+
+
+ main.c
+
+ gcc -c -pg main.c
+
+
+ void fun()
+ {
+    start_time_counter();
+
+
+
+
+    stop_time_counter();
+ }
+
+
+ dynamic code analysis:
+ ======================
+ Valgrind
+  -- memcheck
+  -- fencing
+  -- call grind
+
+  ltt tracing:
+  ============
+
+
+  V-Model:
+  ========
+
+  Unit Testing:
+  ==============
+
+// code under test (CUT)
+
+  int add(int a , int b)
+  {
+      return (a+b);
+  }
+
+  int main()
+  {
+    if  (add (2,3) == 5 )
+        print("test pass");
+    else
+        print("test pass");
+  }
+
+  // Test report
+
+
+
+Unit test frameworks:
+=====================
+- VectoCAST, CANTATA, Parasoft, LDRA.... - Licensesed
+
+- CUnit
+- GTest - Google Test
+
+- APIs, Macros, Functions...
+    - test cases
+    - run test cases
+    - generate test report.
+
+
+CUnit:
+======
+sudo apt-get install libcunit1 libcunit1-dev libcunit1-doc
+
+saif@saif-VirtualBox:~$ sudo apt-cache search cunit
+libcunit1 - Unit Testing Library for C
+libcunit1-dev - Unit Testing Library for C -- development files
+libcunit1-doc - Unit Testing Library for C -- documentation
+
+
+Test Registry:
+    - Suite 1
+    ---- setup
+        - Test 11
+        - Test 12
+    ---- teardown
+    - Suite 2
+        - Test 21
+        - Test 22
+    -.....
+
+
+Run a CUnit test script:
+========================
+gcc mytest.c -lcunit
+./a.out
+=========================================================================
+
+GTest: (Google test)
+=====================
+False
+    mock
+    stub
+
+
+Setup:
+======
+sudo apt-get install libgtest-dev
+sudo apt-get install cmake
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+
+#copy or symlink 'libgtest.a' and 'libgtest_main.a' to your /usr/lib/ folder
+sudo cp *.a /usr/lib
+
+
+CLion
+
+int fun()
+{
+    return system_call();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
