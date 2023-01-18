@@ -1,0 +1,66 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-6Ihokc
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5eb07/fast && /usr/bin/make  -f CMakeFiles/cmTC_5eb07.dir/build.make CMakeFiles/cmTC_5eb07.dir/build
+make[1]: Entering directory '/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-6Ihokc'
+Building C object CMakeFiles/cmTC_5eb07.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5eb07.dir/src.c.o -c /home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-6Ihokc/src.c
+Linking C executable cmTC_5eb07
+/home/saifulla/Downloads/cmake-3.25.1-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5eb07.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_5eb07.dir/src.c.o -o cmTC_5eb07 
+CMakeFiles/cmTC_5eb07.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5eb07.dir/build.make:98: recipe for target 'cmTC_5eb07' failed
+make[1]: *** [cmTC_5eb07] Error 1
+make[1]: Leaving directory '/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-6Ihokc'
+Makefile:127: recipe for target 'cmTC_5eb07/fast' failed
+make: *** [cmTC_5eb07/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-RRgzR6
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1b0ba/fast && /usr/bin/make  -f CMakeFiles/cmTC_1b0ba.dir/build.make CMakeFiles/cmTC_1b0ba.dir/build
+make[1]: Entering directory '/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-RRgzR6'
+Building C object CMakeFiles/cmTC_1b0ba.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_1b0ba.dir/CheckFunctionExists.c.o -c /home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-RRgzR6/CheckFunctionExists.c
+Linking C executable cmTC_1b0ba
+/home/saifulla/Downloads/cmake-3.25.1-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b0ba.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_1b0ba.dir/CheckFunctionExists.c.o -o cmTC_1b0ba  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1b0ba.dir/build.make:98: recipe for target 'cmTC_1b0ba' failed
+make[1]: *** [cmTC_1b0ba] Error 1
+make[1]: Leaving directory '/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleTestParameterizedTests/build/CMakeFiles/CMakeScratch/TryCompile-RRgzR6'
+Makefile:127: recipe for target 'cmTC_1b0ba/fast' failed
+make: *** [cmTC_1b0ba/fast] Error 2
+
+
+

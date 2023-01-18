@@ -1,0 +1,62 @@
+Unit Testing:
+=============
+Gtest:
+
+unit test structure:
+AAA
+Arrange - all inputs and preconditions.
+ACT - call the method under test
+ASSERT - check the results are correct or not.
+
+
+ASSERTING:
+===========
+
+
+
+Outcome 
+    SUCCESS
+    FAILURE
+        - FATAL         --- ASSERT_*   --> EQ, NE, LT, LE, GT, GE, STREQ, STRCASEEQ, THROW, ANY_THROW, NO_THROW
+        - NON-FATAL     --- EXPECT_*   --> EQ, NE, LT, LE, GT, GE
+
+Assertion on Exception
+=======================
+Arrange:
+========
+....
+
+ASSERT_THROW(fun(), std::runtime_exception);
+ASSERT_ANY_THROW(fun());
+ASSERT_NO_THROW(fun());
+
+Mocking:
+=========
+Isolating the dependenceis by replacing them with empty objects.... however we have complete control on these objects.
+
+Test double:
+============
+	- Fake:	they have their implementation, take shortcuts and not suitable for production
+		Ex: in-memory database
+	- Stub:
+		- Responds with pre-defined data.
+		Ex: real server....replaced with mini server with some limited operations.
+	- Mock:
+		- respond to predefined data, but with exceptions:
+			throw or no throw
+			call methods.
+
+
+
+IDatabaseConectionManager --- ABSTRACT CLASS
+	-- OracleConnectionManager
+	-- MySQLConnectionManager	
+
+
+EmployeeManager is association with IDatabaseConectionManager
+
+
+
+
+
+

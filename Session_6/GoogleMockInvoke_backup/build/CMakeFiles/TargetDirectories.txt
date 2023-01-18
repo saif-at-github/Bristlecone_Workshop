@@ -1,0 +1,6 @@
+/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleMockInvoke_backup/build/CMakeFiles/databaseConnectionLibrary.dir
+/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleMockInvoke_backup/build/CMakeFiles/employeeManagerLibrary.dir
+/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleMockInvoke_backup/build/CMakeFiles/mainApp.dir
+/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleMockInvoke_backup/build/CMakeFiles/testRunner.dir
+/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleMockInvoke_backup/build/CMakeFiles/edit_cache.dir
+/home/saifulla/Git/Bristlecone_Workshop/Session_6/GoogleMockInvoke_backup/build/CMakeFiles/rebuild_cache.dir
