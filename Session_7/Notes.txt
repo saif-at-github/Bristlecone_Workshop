@@ -1,0 +1,83 @@
+GDB:
+====
+
+GNU's Debugger
+
+- step through a program line by line...
+
+sudo apt-get install gdb
+
+compile the code for debugging with -g
+========================================
+$ gcc -g program.c -o debug_program
+
+$ gdb ./debug_program
+
+$ gdb ./debug_program -q
+
+$ gdb
+
+(gdb) run
+(gdb) quit
+
+
+pause, observe and proceed ---- Breakpoints
+============================================
+
+pausing the running program at designated points:
+    - function                  (gdb) break factorial
+    - line number               (gdb) breal 10
+    - file_name:Line_number     (gdb) program.c:10
+
+(gdb) info functions
+
+(gdb) info breakpoints
+
+(gdb) delete breakpoint_number
+
+(gdb) disable breakpoint_number
+
+(gdb) next      -   proceed to the next line of execution (doesn't step-into the function)
+
+(gdb) step      -   step-into the function
+
+(gdb) continue  -   continue execution until the next breakpoint is hit or end of program.
+
+(gdb) finish    -   finish executing the current function
+
+DDD
+
+(gdb) print var    or   p var  - print the value of a variable
+
+(gdb) p/x var       -  print var value in hex format, /t for binary, /o for octal
+
+(gdb) r CMD_ARG1 CMD_ARG2   - passing command line arguments to the executable.
+
+
+
+Debug.... -g option enable.
+
+Release.... it is not enabled with -g option.
+
+(gdb) backtrace or bt   -   prints stack frame history, / current function call stack.
+
+(gdb) frame frame_number    - slect a frame to view any local variables.
+
+(gdb) info local            - view local variables
+
+(gdb) list              - list source code, (10 lines at a time)
+                        - list 1, 14
+                        - list 12
+
+view memory contents:
+=====================
+
+(gdb) x/24xb &i
+
+(gdb) print &i          - print sizeof(i)
+
+(gdb) ptype i           - print type of a variable
+
+(gdb) ptype &i
+
+(gdb) ptype main
