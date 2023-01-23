@@ -1,0 +1,100 @@
+(gdb) info frame 1
+
+(gdb) info variables
+
+(gdb) info locals
+
+(gdb) info args
+
+(gdb) info registers
+
+(gdb) info breakpoints
+
+(gdb) info registers eax
+
+========================================
+
+Conditional breakpoints:
+========================
+
+Case:1: breakpoint is already been set.
+=======
+Synatx:
+-------
+condition bp_num expression
+
+Ex: (gdb) condition 3  i==5
+
+Case:2: specify the condition while setting the breakpoint.
+=======
+Synatx:
+-------
+break [position] if expression
+
+Ex: (gdb) b 11 if i==400
+
+
+==========================================
+setting a variable value at runtime:
+-------------------------------------
+(gdb) set var i=900
+===========================================
+
+Watchpoints:
+==============
+breakpoint on variable value change.
+
+watch <var>
+Ex: (gdb) watch x
+
+rwatch <var>
+Ex: (gdb) watch y
+
+(gdb)  start               - is equivalent for (gdb) break main 
+                                               (gdb) run
+
+(gdb) display <var>       - display the value of a variable after every gdb command.
+
+==================================================
+gdb Text User Interface
+================================================
+$ gdbtui
+(gdb) file ./dprogram
+
+to refresh screen Ctrl+L
+
+shift between normal gdb mode and TUI mode -- Cntrl+x a
+
+
+
+=============================================
+Process and Threads
+=============================================
+(gdb) shell ps -ef | grep search-string
+(gdb) attach <pid>
+
+
+automatically gives a message whenever a new thread is created / or destroyed.
+
+(gdb) info threads
+(gdb) thread <thread_num>
+(gdb) set scheduler-locking <mode>      -- off - then there is no locking and any thread may run.
+                                        -- on - only the current thread may run.
+(gdb) info frames
+
+
+
+Core dump:
+==========
+snapshot of memory at the instant the program crashed...typically saved in a file called "core".
+
+- code segment
+- data segment
+- stack segment
+- heap segment
+- registers states.
+
+use-case:
+=========
+analysis
+========================================

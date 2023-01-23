@@ -1,0 +1,18 @@
+Breakpoint 1 at 0x65f: file program.c, line 12.
+Starting program: /home/saifulla/Git/Bristlecone_Workshop/Session_8/gdb_tui_demo/dprogram 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffdba8) at program.c:12
+12		unsigned int loop = 50;
+13		while(loop--) {
+14	    printf("Factorial of number %d is %u\n", 
+13		while(loop--) {
+14	    printf("Factorial of number %d is %u\n", 
+13		while(loop--) {
+14	    printf("Factorial of number %d is %u\n", 
+13		while(loop--) {
+14	    printf("Factorial of number %d is %u\n", 
+13		while(loop--) {
+14	    printf("Factorial of number %d is %u\n", 
+13		while(loop--) {
+Continuing.
+[Inferior 1 (process 23910) exited normally]
