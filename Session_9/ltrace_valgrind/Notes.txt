@@ -1,0 +1,27 @@
+strace:
+=======
+$ gcc one.c -o one
+$ strace ./one
+
+$ sudo strace -p <pid>
+
+$ strace -t 
+$ strace -tt ./two
+$ strace -ttt ./two
+$ strace -ttT ./two
+$ strace -ff ./two
+
+
+ltrace:
+=======
+
+$ ltrace -t./libcalls
+$ ltrace -ttT ./libcalls
+$ ltrace -t ./libcalls
+$ ltrace -c ./libcalls
+$ ltrace -e <fun_name> ./libcalls
+$ ltrace -e fopen -c ./libcall
+
+
+Process:
+========

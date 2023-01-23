@@ -1,0 +1,98 @@
+ulimit -c unlimited
+
+sudo service apport stop
+
+cat /proc/sys/kernel/core_pattern
+
+gdb ./myprogram core
+
+sudo sysctl kernel.core_pattern=%(Agent.TempDirectory)/coredump.%e.%s.%t
+
+Ex:
+sudo sysctl kernel.core_pattern=/tmp/coredump.%e.%s.%t
+
+cat /proc/sys/kernel/core_pattern
+
+gdb ./myprogram coredump.myprogram.11.1674450949
+
+Case#0:
+=======program does segmentatin fault and generating core dump
+
+
+Case#1:
+========= generating coredump from outside the program.
+kill -s SIGABRT <pid>
+
+Case#2:
+======== Register signal handler for SIGABRT, SIGKILL.... and print information by yourself.
+
+Case#3:
+======== generate coredump from inside the program, by calling `abort()`, may be require before calling it, print some use full information  having written corresponding signal handler.
+
+Case#4:
+========
+(gdb) attach <pid>
+(gdb) generate-core-file <optional-filename>
+(gdb) detach
+
+
+Ctrl-c ---- SIGINT
+
+Ctrl-/ ---- SIGQUIT
+
+
+
+        End-User
+===========================================================|
+UserSpace / User Applications [Non-Prileged] / User Mode
+
+glibc, mathLibrary, Pthread Lib
+============================================================|
+            |
+            |   System Calls
+            V
+============================================================|
+KERNEL - Core of the OS [Privileged] - Kernel Mode
+
+[Sched, MM, NM, DM, FM, DD....]
+
+
+============================================================|
+
+Hardware:
+
+CPU, Memory, I/O, Monitor...
+
+=============================================================|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
