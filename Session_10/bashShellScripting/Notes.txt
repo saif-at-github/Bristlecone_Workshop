@@ -1,0 +1,30 @@
+Bash Shell Scripting:
+=====================
+
+Scripts:
+    Interpreter.
+        Shell Scripting
+        Python
+        JScript
+        Perl
+        Matlab
+
+Script: set of commands written in sequentially
+
+Shell: Command interpreter
+sh - bshell
+zsh - z Shell
+csh
+bash
+busybox
+
+    $ env
+
+    $ export var_name
+
+    $ sudo vim /etc/bash.bashrc
+    
+    $ vim ~/.bashrc
+
+    $ source filename
+
